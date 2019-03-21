@@ -7,6 +7,7 @@
  *      - Explicitly instantiate the template, and its member definitions
  *      - Copy the code into the relevant header file
  */
+
 #define MIN_VEC_SIZE 0
 #define MAX_VEC_SIZE 100
 #include <iostream>
@@ -193,12 +194,24 @@ class Vector{
 
 
     bool swap_elements(int index1, int index2){
-      return false;
+      if(index1 < MIN_VEC_SIZE || index1 > size ||
+          index2 < MIN_VEC_SIZE || index2 > size){
+        throw std::logic_error("invalid index");
+        return false;
+      }
+
+      T temp = element_pointer[index1];
+      element_pointer[index1] = element_pointer[index2];
+      element_pointer[index2] = temp;
+      return true;
     }
 
 
-    bool reverse(Vector original_vector, Vector reversed_vecotr){
-      return false;
+    bool reverse(){
+      for(int i = 0; i < (size>>1); i++){
+        swap_elements(i, size-1-i);
+      }
+      return true;
     }
 
 

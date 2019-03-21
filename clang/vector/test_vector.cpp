@@ -79,8 +79,40 @@ TEST_CASE("Test Vector Class", "[vector]"){
     REQUIRE(test_vector.clear() == true);
   }
 
-  SECTION("reverse all the elements"){
-    //FAIL();
+  SECTION("reverse all the elements / swap two elements"){
+    REQUIRE(test_vector.push_back('a') == true);
+    REQUIRE(test_vector.push_back('b') == true);
+    REQUIRE(test_vector.push_back('c') == true);
+    REQUIRE(test_vector.push_back('d') == true);
+    REQUIRE(test_vector.push_back('e') == true);
+
+    REQUIRE_THROWS(test_vector.swap_elements(-1, 2));
+    REQUIRE_THROWS(test_vector.swap_elements(0, MAX_VEC_SIZE));
+    REQUIRE(test_vector.swap_elements(0, 4) == true);
+    REQUIRE(test_vector.get_element(4) == 'a');
+    REQUIRE(test_vector.get_element(0) == 'e');
+    REQUIRE(test_vector.swap_elements(1, 3) == true);
+    REQUIRE(test_vector.swap_elements(2, 2) == true);
+    REQUIRE(test_vector.get_element(2) == 'c');
+
+    REQUIRE(test_vector.clear() == true);
+    REQUIRE(test_vector.push_back('a') == true);
+    REQUIRE(test_vector.push_back('b') == true);
+    REQUIRE(test_vector.push_back('c') == true);
+    REQUIRE(test_vector.push_back('d') == true);
+    REQUIRE(test_vector.push_back('e') == true);
+
+    REQUIRE(test_vector.reverse() == true);
+    REQUIRE(test_vector.get_element(0) == 'e');
+    REQUIRE(test_vector.get_element(1) == 'd');
+    REQUIRE(test_vector.get_element(2) == 'c');
+    REQUIRE(test_vector.get_element(3) == 'b');
+    REQUIRE(test_vector.get_element(4) == 'a');
+
+    test_vector.erase(0);
+    REQUIRE(test_vector.reverse() == true);
+    REQUIRE(test_vector.get_element(0) == 'a');
+    REQUIRE(test_vector.get_element(3) == 'd');
   }
 
   SECTION("search/get an element by index/value"){
