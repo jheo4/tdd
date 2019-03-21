@@ -1,4 +1,4 @@
-#include "catch2/catch.hpp"
+#include <catch2/catch.hpp>
 
 SCENARIO("vector operation", "[vector]"){
   GIVEN("vector items"){

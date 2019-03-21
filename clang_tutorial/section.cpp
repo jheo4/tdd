@@ -1,4 +1,4 @@
-#include "catch2/catch.hpp"
+#include <catch2/catch.hpp>
 
 TEST_CASE("vector operations", "[vector]"){
   std::vector<int> vec(5);

@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
 
-#include "catch2/catch.hpp"
+#include <catch2/catch.hpp>
 
 // export CATCH_IC=<catch.hpp PATH>
 // g++ -std=c++11 -Wall -I$(CATCH_INC) -c catch_main.cpp

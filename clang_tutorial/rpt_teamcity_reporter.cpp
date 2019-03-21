@@ -1,4 +1,4 @@
-#include "catch2/catch.hpp"
+#include <catch2/catch.hpp>
 
 #ifdef _MSC_VER
 # pragma warning (disable : 4702) // Disable warning: unreachable code

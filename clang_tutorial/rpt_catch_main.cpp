@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
 
-#include "catch2/catch.hpp"
+#include <catch2/catch.hpp>
 
 #ifdef CATCH_EXAMPLE_RPT_1
 #include CATCH_EXAMPLE_RPT_1

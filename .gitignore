@@ -1,3 +1,11 @@
+# Vim
+*.swp
+
+# Clang
 *.o
 *.out
-*.swp
+
+# Java
+*.class
+.classpath
+.project

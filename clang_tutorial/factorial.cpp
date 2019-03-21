@@ -1,7 +1,6 @@
 #include <iostream>
-// TODO inc_dir
-#define CATCH_CONFIG_MAIN
-#include "catch2/catch.hpp"
+//#define CATCH_CONFIG_MAIN
+#include <catch2/catch.hpp>
 
 unsigned int
 factorial(unsigned int number){
